@@ -4,6 +4,7 @@
     postData: postData.data
     currentPost:
       title: 'Loading...'
+      author: ''
       contents: ''
 
   $scope.data.postId = $routeParams.postId
@@ -14,11 +15,13 @@
   $scope.navHome = ->
     $location.url('/')
 
+
   # This will be run once the loadPosts successfully completes (or immediately
   # if data is already loaded)
   $scope.prepPostData = ->
     post = _.findWhere(postData.data.posts, { id: parseInt($scope.data.postId) })
     $scope.data.currentPost.title = post.title
+    $scope.data.currentPost.author = post.author
     $scope.data.currentPost.contents = post.contents
 
   # Create promise to be resolved after posts load

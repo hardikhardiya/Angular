@@ -1,4 +1,7 @@
 Demo12::Application.routes.draw do
+  resources :personals
+
+
   #get "main/index"
   resources :posts
   

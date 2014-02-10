@@ -15,11 +15,11 @@ class PostsController < ApplicationController
 
 
   def create
-
     # Create and save new post from data received from the client
     new_post = Post.new
     new_post.title = params[:new_post][:title][0...250] # Get only first 250 characters
     new_post.contents = params[:new_post][:contents]
+    new_post.author = params[:new_post][:author][0...50]
 
     # Confirm post is valid and save or return HTTP error
     if new_post.valid?

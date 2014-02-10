@@ -18,9 +18,10 @@ Demo12 = angular.module('Demo12', [])
 # Sets up routing
 Demo12.config(['$routeProvider', ($routeProvider) ->
  
-  $routeProvider
-  .when('/post/new',{ templateUrl: '../assets/mainCreatePost.html', controller: 'CreatePostCtrl'})  
-  .when('/post/:postId', { templateUrl: '../assets/mainPost.html', controller: 'PostCtrl' } )
-  .otherwise({ templateUrl: '../assets/mainIndex.html', controller: 'IndexCtrl' } )
+  $routeProvider.when('/post/new',{ templateUrl: '../assets/mainCreatePost.html', controller: 'CreatePostCtrl'})  
+  $routeProvider.when('/post/:postId', { templateUrl: '../assets/mainPost.html', controller: 'PostCtrl' } )
+  $routeProvider.when('/personal/new',{ templateUrl: '../assets/mainCreatePersonal.html', controller: 'CreatePersonalCtrl'})
+  $routeProvider.when('/personal/:personalId', { templateUrl: '../assets/mainPersonal.html', controller: 'PersonalCtrl' } )
+  $routeProvider.otherwise({ templateUrl: '../assets/mainIndex.html', controller: 'IndexCtrl' } )
 
 ])
