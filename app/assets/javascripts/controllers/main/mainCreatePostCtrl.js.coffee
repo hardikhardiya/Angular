@@ -10,7 +10,10 @@
 
   $scope.createPost = ->
     postData.createPost($scope.formData)
-    $location.url('/')
+    if postData.createPost($scope.formData)
+      $location.url('/')
+    else 
+      $location.url('/post/new')  
 
   $scope.clearPost = ->
     $scope.formData.newPostTitle = ''

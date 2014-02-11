@@ -4,7 +4,9 @@
 
   personalData.loadPersonals(null)  
 
-  $scope.data = postData.data
+  $scope.data = postData.data  
+  $scope.currentPage = 4
+  $scope.maxSize = 5
 
   postData.loadPosts(null)
 

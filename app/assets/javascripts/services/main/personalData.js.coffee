@@ -21,10 +21,10 @@ angular.module('Demo12').factory('personalData', ['$http', ($http) ->
         phone_number: newPersonal.newPersonalPhone
 
     # Do POST request to /personals.json
-    $http.personal('./personals.json', data).success( (data) ->
+    $http.post('./personals.json', data).success( (data) ->
 
       # Add new personal to array of personals
-      personalData.data.personals.push(data)
+      personalData.data.posts.push(data)
       console.log('Successfully created personal.')
 
     ).error( ->
@@ -37,7 +37,7 @@ angular.module('Demo12').factory('personalData', ['$http', ($http) ->
   personalData.loadPersonals = (deferred) ->
     if !personalData.isLoaded
       $http.get('./personals.json').success( (data) ->
-        personalData.data.personals = data
+        personalData.data.posts = data
         personalData.isLoaded = true
         console.log('Successfully loaded personals.')
         if deferred
