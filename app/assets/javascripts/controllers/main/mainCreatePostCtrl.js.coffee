@@ -9,7 +9,6 @@
     newPostContents: ''
 
   $scope.createPost = ->
-    postData.createPost($scope.formData)
     if postData.createPost($scope.formData)
       $location.url('/')
     else 
