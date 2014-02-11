@@ -47,11 +47,11 @@ development:
 #   pool: 5
 #   username: demo12
 #   password:
-
-# production:
-#   adapter: postgresql
-#   encoding: unicode
-#   database: demo12_production
-#   pool: 5
-#   username: demo12
-#   password:
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: anguler_db123
+  pool: 5
+  host: localhost
+  username: postgres
+  password: postgres
