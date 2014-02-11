@@ -15,7 +15,6 @@ class PersonalsController < ApplicationController
 
 
   def create
-    debugger
     # Create and save new personal from data received from the client
     new_personal = Personal.new
     new_personal.name = params[:new_personal][:name][0...50] # Get only first 250 characters
