@@ -13,17 +13,14 @@
   $scope.navNewPersonal = ->
     $location.url('/personal/new')
 
-  $scope.navNewPost = ->
-    $location.url('/post/new')
-
   $scope.navHome = ->
     $location.url('/')
 
 
-  # This will be run once the loadPosts successfully completes (or immediately
+  # This will be run once the loadPersonals successfully completes (or immediately
   # if data is already loaded)
   $scope.prepPersonalData = ->
-    personal = _.findWhere(personalData.data.personals, { id: parseInt($scope.data.personalId) })
+    personal = _.findWhere(personalData.data.posts, { id: parseInt($scope.data.personalId) })
     $scope.data.currentPersonal.name = personal.name
     $scope.data.currentPersonal.age = personal.age
     $scope.data.currentPersonal.address = personal.address
@@ -33,7 +30,7 @@
   @deferred = $q.defer()
   @deferred.promise.then($scope.prepPersonalData)
 
-  # Provide deferred promise chain to the loadpersonals function
+  # Provide deferred promise chain to the loadPersonals function
   personalData.loadPersonals(@deferred)
 
 

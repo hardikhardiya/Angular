@@ -4,9 +4,10 @@
 
   personalData.loadPersonals(null)  
 
+  $scope.viewPersonal = (personalId) ->
+    $location.url('/personal/'+personalId)  
+
   $scope.data = postData.data  
-  $scope.currentPage = 4
-  $scope.maxSize = 5
 
   postData.loadPosts(null)
 

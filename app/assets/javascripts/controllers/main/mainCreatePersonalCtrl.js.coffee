@@ -12,7 +12,6 @@
   $scope.createPersonal = ->
     personalData.createPersonal($scope.formData)
 
-
   $scope.clearPersonal = ->
     $scope.formData.newPersonalName = ''
     $scope.formData.newPersonalAge = ''
